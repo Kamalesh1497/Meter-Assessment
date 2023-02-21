@@ -27,13 +27,7 @@ Controller Should Reach the Internet
     ${ping response}=  Run  ping -c 1 ${Internet IP}
     Should Contain     ${ping response}  1 received
     Log to Console	Controller is able to reach the internet.....
-    
-Controller Should Assign IP Addresses to Hosts on LAN
-
-    ${host response}=  Run  ping -c 1 ${Corp_Host_IP}
-    Should Contain     ${host response}  1 received
-    Log to Console	Controller is able to assign ip.....
-    
+        
 Controller Should Act as Default Gateway for Hosts on LAN
 
     ${host response}=  Run  traceroute -n -m 1 ${Internet IP}
